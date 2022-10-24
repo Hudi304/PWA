@@ -20,21 +20,6 @@ $(function () {
   }
 });
 
-// mCustomScrollbar initialization
-(function ($) {
-  $(window)
-    .resize(function () {
-      $("#map").css("height", $(this).height() - 110);
-      if ($(this).width() > 768) {
-        $(".map-content-sidebar").mCustomScrollbar({ theme: "minimal-dark" });
-        $(".map-content-sidebar").css("height", $(this).height() - 110);
-      } else {
-        $(".map-content-sidebar").mCustomScrollbar("destroy"); //destroy scrollbar
-        $(".map-content-sidebar").css("height", "100%");
-      }
-    })
-    .trigger("resize");
-})(jQuery);
 
 function createButton(text, href, icon) {
   var button1 = document.createElement("button");
