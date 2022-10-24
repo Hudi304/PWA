@@ -38,14 +38,26 @@ $(function () {
 
 function createButton(text, href, icon) {
   var button1 = document.createElement("button");
+  let style1 = document.createAttribute("style");
+  style1.value = "display: flex; align-items: center; border : none; border-radius:5px;"
+  button1.setAttributeNode(style1);
+
   var text1 = document.createTextNode(text);
 
   let i1 = document.createElement("i");
   let class1 = document.createAttribute("class");
+  let style2 = document.createAttribute("style");
+
   class1.value = icon;
+  style2.value = "font-size:30px;color:lightblue; margin-right: 10px" ;
   i1.setAttributeNode(class1);
+  i1.setAttributeNode(style2);
+
 
   let a1 = document.createElement("a");
+  let style3 = document.createAttribute("style");
+  style3.value = "text-decoration: none;"
+  a1.setAttributeNode(style3);
   let href1 = document.createAttribute("href");
   href1.value = href;
   a1.setAttributeNode(href1);
@@ -61,14 +73,24 @@ function createButton(text, href, icon) {
 
 function createButtonWithClick(text, href, icon, onClick) {
   var button1 = document.createElement("button");
+  let style1 = document.createAttribute("style");
+  style1.value = "display: flex; align-items: center; border : none; border-radius:5px;"
+  button1.setAttributeNode(style1);
   var text1 = document.createTextNode(text);
 
   let i1 = document.createElement("i");
+  let style2 = document.createAttribute("style");
+  style2.value = "font-size:30px;color:lightblue; margin-right: 10px" ;
+  i1.setAttributeNode(style2);
+
   let class1 = document.createAttribute("class");
   class1.value = icon;
   i1.setAttributeNode(class1);
 
   let a1 = document.createElement("a");
+  let style3 = document.createAttribute("style");
+  style3.value = "text-decoration: none;"
+  a1.setAttributeNode(style3);
   let href1 = document.createAttribute("href");
   href1.value = href;
 
