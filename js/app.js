@@ -104,6 +104,6 @@ function createInstallButton(text) {
 
 function openSMSMobile(e) {
   console.log("AICIII");
-  window.open("sms:0754302599&body=hello", "_self");
+  window.open("sms:0754302599&body=Hello Dani!", "_self");
   return false;
 }

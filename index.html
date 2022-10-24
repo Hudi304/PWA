@@ -59,12 +59,15 @@
   </div>
 
   <script>
+    let phoneNumber = "+40744317555";
+    let email = "daniel.gorgan@techquarter.io";
+
     if (isThisDeviceRunningiOS() === true) {
-      createButton("Call Dani from IPhone", "tel:0754302599", "fa fa-phone");
+      createButton("Call Dani from IPhone", `tel:${phoneNumber}`, "fa fa-phone");
 
       createButton(
         "Mail Dani from IPhone",
-        "mailto:hudisteanu.ma@gmail.com?body=Hello",
+        `${email}?body=Hello Dani!`,
         "fa fa-inbox"
       );
 
@@ -77,45 +80,45 @@
 
       createButton(
         "Facetime Video Dani",
-        "facetime:ilie.filip@techquarter.io",
+        `facetime:${phoneNumber}`,
         "fa fa-video-camera"
       );
 
       createButton(
         "Facetime Audio Dani",
-        "facetime-audio:ilie.filip@techquarter.io",
+        `facetime-audio:${phoneNumber}`,
         "fa fa-microphone"
       );
     } else if (isAndroidDevice() === true) {
       createInstallButton("Install");
 
-      createButton("Call Dani from Android", "tel:0754302599", "fa fa-phone");
+      createButton("Call Dani from Android", `tel:${phoneNumber}`, "fa fa-phone");
 
       createButton(
         "SMS Dani from Android",
-        "sms:0756230357?body=Hello",
+        `sms:${phoneNumber}?body=Hello Dani!`,
         "fa fa-envelope"
       );
 
       createButton(
         "Mail Dani from Android",
-        "mailto:hudisteanu.ma@gmail.com?body=Hello",
+        `mailto:${email}?body=Hello Dani`,
         "fa fa-inbox"
       );
     } else {
       createInstallButton("Install");
 
-      createButton("Call Dani from PC", "tel:0754302599", "fa fa-phone");
+      createButton("Call Dani from PC", `tel:${phoneNumber}`, "fa fa-phone");
 
       createButton(
         "Mail Dani from PC",
-        "mailto:hudisteanu.ma@gmail.com?body=Hello",
+        `mailto:${email}?body=Hello Dani!`,
         "fa fa-inbox"
       );
 
       createButton(
         "Skype Dani from PC",
-        "callto:0756230357?body=Hello",
+        `callto:${phoneNumber}?body=Hello Dani!`,
         "fa fa-skype"
       );
     }
@@ -155,7 +158,7 @@
     }
 
     function openSMSMobile(e) {
-      window.open("sms:0754302599&body=hello", "_self");
+      window.open(`sms:${phoneNumber}&body=hello`, "_self");
       return false;
     }
 
