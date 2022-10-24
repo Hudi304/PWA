@@ -56,7 +56,6 @@
 </head>
 
 <body>
-  <div class="page_loader"></div>
 
   <script src="js/jquery-2.2.0.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -81,6 +80,8 @@
   <div>
     title
   </div>
+
+
 
 
   <p>
@@ -125,11 +126,44 @@
     <a href="facetime-audio:ilie.filip@techquarter.io">facetime-audio:ilie.filip@techquarter.io</a>
   </p>
 
+  <button class="dev_button_mobile" id="installApp" onclick="pwainstall()" aria-label="install to the device">
+    <span class="material-symbols-rounded clickable" style="font-size: 18px">install_mobile</span>
+  </button>
+
   <script>
-    function openSMSMobile(e) {           
-        window.open('sms:0754302599&body=hello', '_self');
-        return false;
+    function openSMSMobile(e) {
+      window.open('sms:0754302599&body=hello', '_self');
+      return false;
     }
+
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      deferredPrompt = e;
+    });
+
+    const installApp = document.getElementById('installApp');
+
+    async function pwainstall() {
+      if (deferredPrompt !== null) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          deferredPrompt = null;
+        }
+      }
+    }
+
+
+    installApp.addEventListener('click', async () => {
+      if (deferredPrompt !== null) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          deferredPrompt = null;
+        }
+      }
+    });
   </script>
 
 
