@@ -109,12 +109,32 @@ function createButtonWithClick(text, href, icon, onClick) {
 function createInstallButton(text) {
   var button1 = document.createElement("button");
   var text1 = document.createTextNode(text);
+  let id1 = document.createAttribute("id");
+  id1.value = "installApp";
+  button1.setAttributeNode(id1);
   button1.appendChild(text1);
   var element = document.getElementById("wrapper");
   element.appendChild(button1);
 }
 
+let deferredPrompt;
 
+window.addEventListener("beforeinstallprompt", (e) => {
+  deferredPrompt = e;
+});
+
+const installApp1 = document.getElementById("installApp");
+
+installApp1.addEventListener("click", async () => {
+  console.log("AIIIICII");
+  if (deferredPrompt !== null) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === "accepted") {
+      deferredPrompt = null;
+    }
+  }
+});
 
 function openSMSMobile(e) {
   console.log("AICIII");
