@@ -117,25 +117,6 @@ function createInstallButton(text) {
   element.appendChild(button1);
 }
 
-let deferredPrompt;
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  deferredPrompt = e;
-});
-
-const installApp1 = document.getElementById("installApp");
-
-installApp1.addEventListener("click", async () => {
-  console.log("AIIIICII");
-  if (deferredPrompt !== null) {
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === "accepted") {
-      deferredPrompt = null;
-    }
-  }
-});
-
 function openSMSMobile(e) {
   console.log("AICIII");
   window.open("sms:0754302599&body=hello", "_self");

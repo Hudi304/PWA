@@ -1,21 +1,35 @@
 {
-    "name": "CarZone",
-    "short_name": "Carzone",
-    "start_url": ".",
-    "display": "standalone",
-    "background_color": "#2A3443",
-    "description": "carselling application",
-    "theme_color": "#2A3443",
-    "icons": [
-      {
-        "src": "./img/512X512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      },
-  {
-        "src": "./img/96X96.png",
-        "sizes": "96x96",
-        "type": "image/png"
-      }
-    ]
-  }
+  "name": "PWA_test",
+  "short_name": "PWA_test",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#2A3443",
+  "description": "carselling application",
+  "theme_color": "#2A3443",
+  "icons": [
+    {
+      "src": "icons/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
