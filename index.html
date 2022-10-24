@@ -61,13 +61,15 @@
   <script>
     let phoneNumber = "+40744317555";
     let email = "daniel.gorgan@techquarter.io";
+    // let email = "hudisteanu.ma@gmail.com";
+
 
     if (isThisDeviceRunningiOS() === true) {
       createButton("Call Dani from IPhone", `tel:${phoneNumber}`, "fa fa-phone");
 
       createButton(
         "Mail Dani from IPhone",
-        `${email}?body=Hello Dani!`,
+        `mailto:${email}?body=Hello`,
         "fa fa-inbox"
       );
 
